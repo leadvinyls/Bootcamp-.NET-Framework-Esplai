@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Timers;
+using Utilidades;
+using Utilities;
 
 namespace BarajaYCartas
 {
@@ -16,13 +18,10 @@ namespace BarajaYCartas
             while (true)
             {
                 if (Menu())
-                {
                     Partida();
-                }
                 else
                     break;
             }
-
         }
 
         static bool Menu()
@@ -33,7 +32,7 @@ Introduce el numero de jugadores (entre 2 y 5)
 ");
             while (true)
             {
-                int nJugadores = IntroNum();
+                int nJugadores = InputTools.IntroNum();
                 if (2 <= nJugadores && nJugadores <= 5)
                 {
                     InitJugadores(nJugadores);
@@ -45,50 +44,28 @@ Introduce el numero de jugadores (entre 2 y 5)
                     Console.WriteLine("Error: Numero de jugadores fuera de rango");
             }      
         }
-
-        static int IntroNum()
-        {
-            while (true)
-            {
-                Console.Write("> ");
-                string s = Console.ReadLine();
-                if (int.TryParse(s, out int num))
-                    return num;
-
-                Console.WriteLine("Error: El valor introducido no es un número");
-            }
-        }
-
         static void InitJugadores(int nJugadores)
         {
             for (int jugador = 1; jugador <= nJugadores; jugador++)
                 jugadores.Add(new Jugador($"Jugador {jugador}"));
 
         }
-
         static void Partida()
         {
-            Console.Clear();
+            OutputTools.Clear();
 
             Dictionary<Jugador, Carta> mesa = new Dictionary<Jugador, Carta>();
             barajaCentral.Barajar();
             RepartirCartas();
+
             Console.WriteLine("Cartas Repartidas");
             while (jugadores.Count() >= 2)
             {
                 Jugador jugadorActual = jugadores[0];
                 while (mesa.Count() < jugadores.Count())
                 {
-                    Console.Clear();
-                    Console.WriteLine("\x1b[3J");
-
-                    Console.WriteLine($"Turno: {jugadorActual}");
-                    Console.WriteLine($"{jugadorActual.BarajaJugador}");
-                    
-                    //Console.ReadKey();
+                    OutputTools.Clear();
                     JugarCarta(ref jugadorActual, ref mesa);
-                    //Console.ReadKey();
-
                     jugadorActual = CambiarTurno();
                 }
                 CheckCartaGanadora(ref mesa);
@@ -122,8 +99,7 @@ Introduce el numero de jugadores (entre 2 y 5)
             if(jugadorActual.BarajaJugador.Cartas.Count() > 0)
                 mesa.Add(jugadorActual,cartaJugada);
 
-            Console.Clear();
-            Console.WriteLine("\x1b[3J");
+            OutputTools.Clear();
             Console.WriteLine($"{jugadorActual} ha jugado la carta\n{cartaJugada}");
             Console.ReadKey();
         }
@@ -137,33 +113,15 @@ Introduce el numero de jugadores (entre 2 y 5)
             {
                 Carta cartaActual = element.Value;
                 Jugador jugadorActual = element.Key;
-                if (cartaActual.Numero > cartaGanadora.Numero)
+
+                if ((cartaActual.Numero > cartaGanadora.Numero) || ((int)cartaActual.Palo < (int)cartaGanadora.Palo))
                 {
-                    cartaGanadora = element.Value;
-                    jugadorGanador = element.Key;
-                }
-                else
-                {
-                    if (!mesaEmpate.ContainsValue(cartaGanadora) && !mesaEmpate.ContainsValue(cartaActual) && jugadorActual != jugadorGanador)
-                    {
-                        mesaEmpate.Add(jugadorGanador, cartaGanadora);
-                        mesaEmpate.Add(jugadorActual, cartaActual);
-                    }
+                    cartaGanadora = cartaActual;
+                    jugadorGanador = jugadorActual;
                 }
             }
 
-            if (mesaEmpate.Count() > 0)
-            {
-                foreach (var element in mesaEmpate)
-                {
-                    Jugador jugadorActual = element.Key;
-                    JugarCarta(ref jugadorActual, ref mesa);
-                }
-                CheckCartaGanadora(ref mesa);
-            }
-
-            Console.Clear();
-            Console.WriteLine("\x1b[3J");
+            OutputTools.Clear();
             Console.WriteLine($"{jugadorGanador.Nombre} ha ganado la ronda!");
             Console.ReadKey();
 
@@ -186,7 +144,7 @@ Introduce el numero de jugadores (entre 2 y 5)
 
             do
             {
-              num = IntroNum();
+              num = InputTools.IntroNum();
             } while (num < 0 && num > b.Cartas.Count());
 
             return num - 1;

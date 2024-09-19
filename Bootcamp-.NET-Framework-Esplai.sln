@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Introduccion", "Introduccio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnakeGame", "SnakeGame\SnakeGame.csproj", "{83937A3C-EFA8-4690-B2B8-6FDAC41715AD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities", "Utilidades\Utilities.csproj", "{5F72856B-5C53-4ABA-951E-31E034B5A356}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{83937A3C-EFA8-4690-B2B8-6FDAC41715AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83937A3C-EFA8-4690-B2B8-6FDAC41715AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83937A3C-EFA8-4690-B2B8-6FDAC41715AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F72856B-5C53-4ABA-951E-31E034B5A356}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F72856B-5C53-4ABA-951E-31E034B5A356}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F72856B-5C53-4ABA-951E-31E034B5A356}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F72856B-5C53-4ABA-951E-31E034B5A356}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
