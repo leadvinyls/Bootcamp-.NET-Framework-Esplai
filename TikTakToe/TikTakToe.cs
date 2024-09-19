@@ -6,6 +6,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using Utilities;
 
 namespace ConsoleApp3
 {
@@ -212,11 +213,7 @@ namespace ConsoleApp3
 
         static void ImprimirTablero(bool?[,] tablero, int dim, bool? victoria = null)
         {
-            Console.Clear();
-
-            //Si los caracteres exceden el tamaño de la consola, limpiamos el buffer de scrollbar
-            //Si no se limpia ese buffer, la impresion es erronea.
-            Console.Write("\x1b[3J");
+            OutputTools.Clear();
 
             //Traducimos la matriz de booleanos nulleables a una matriz de strings
             string[,] tableroString = new string[dim, dim];
@@ -334,11 +331,7 @@ namespace ConsoleApp3
 
         static void ImprimirTableroTridimensional(bool?[,,] tablero, int dim, bool? victoria = null)
         {
-            Console.Clear();
-
-            //Si los caracteres exceden el tamaño de la consola, limpiamos el buffer de scrollbar
-            //Si no se limpia ese buffer, la impresion es erronea.
-            Console.Write("\x1b[3J");
+            OutputTools.Clear();
 
             for (int p = 0; p < dim; p++)
             {

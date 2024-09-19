@@ -53,7 +53,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Utilidades\Utilities.csproj">
+    <ProjectReference Include="..\Utilities\Utilities.csproj">
       <Project>{5f72856b-5c53-4aba-951e-31e034b5a356}</Project>
       <Name>Utilities</Name>
     </ProjectReference>

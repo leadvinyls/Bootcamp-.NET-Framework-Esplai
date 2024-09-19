@@ -4,18 +4,36 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BarajaYCartas", "BarajayCartas\BarajaYCartas.csproj", "{EE2CFE3E-BE51-4880-BF12-3130F817F31B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5F72856B-5C53-4ABA-951E-31E034B5A356} = {5F72856B-5C53-4ABA-951E-31E034B5A356}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EjercicioArchivos", "EjercicioArchivos\EjercicioArchivos.csproj", "{A4DC6789-69A3-4840-A1F6-C8B7630BDFA5}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5F72856B-5C53-4ABA-951E-31E034B5A356} = {5F72856B-5C53-4ABA-951E-31E034B5A356}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraductorMorse", "TraductorMorse\TraductorMorse.csproj", "{0C3CF570-96CF-4B64-89C9-FB1A69B73417}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5F72856B-5C53-4ABA-951E-31E034B5A356} = {5F72856B-5C53-4ABA-951E-31E034B5A356}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TikTakToe", "TikTakToe\TikTakToe.csproj", "{EAA2E17E-EA47-4396-8CDF-F5DC31DDF3BC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5F72856B-5C53-4ABA-951E-31E034B5A356} = {5F72856B-5C53-4ABA-951E-31E034B5A356}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Introduccion", "Introduccion\Introduccion.csproj", "{11E22095-6A7A-4F63-BA20-1F659E680242}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5F72856B-5C53-4ABA-951E-31E034B5A356} = {5F72856B-5C53-4ABA-951E-31E034B5A356}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnakeGame", "SnakeGame\SnakeGame.csproj", "{83937A3C-EFA8-4690-B2B8-6FDAC41715AD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5F72856B-5C53-4ABA-951E-31E034B5A356} = {5F72856B-5C53-4ABA-951E-31E034B5A356}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities", "Utilidades\Utilities.csproj", "{5F72856B-5C53-4ABA-951E-31E034B5A356}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities", "Utilities\Utilities.csproj", "{5F72856B-5C53-4ABA-951E-31E034B5A356}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
