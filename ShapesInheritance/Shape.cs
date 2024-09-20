@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HerenciaFormas
+namespace ShapesInheritance
 {
-    internal class Program
+    public class Shape
     {
-        static void Main(string[] args)
-        {
-        }
+
     }
 }

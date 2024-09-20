@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{A4DC6789-69A3-4840-A1F6-C8B7630BDFA5}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>EjercicioArchivos</RootNamespace>
-    <AssemblyName>EjercicioArchivos</AssemblyName>
+    <RootNamespace>FilesExercise</RootNamespace>
+    <AssemblyName>FilesExercise</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{EE2CFE3E-BE51-4880-BF12-3130F817F31B}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>BarajayCartas</RootNamespace>
-    <AssemblyName>BarajayCartas</AssemblyName>
+    <RootNamespace>DeckAndCards</RootNamespace>
+    <AssemblyName>DeckAndCards</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
