@@ -10,4 +10,22 @@ namespace ShapesInheritance
     {
 
     }
+
+    public class Poligon : Shape 
+    { 
+        public int Sides { get; set; }
+    }
+    public class Rectangle : Poligon
+    {
+
+    }
+
+    public class Square : Rectangle
+    { 
+    }
+
+    public class Ellipse : Shape
+    { 
+
+    }
 }
