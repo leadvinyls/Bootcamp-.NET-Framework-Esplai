@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EE2CFE3E-BE51-4880-BF12-3130F817F31B}</ProjectGuid>
+    <ProjectGuid>{7A7CED0B-C22B-46BC-9250-8396C2A7A748}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>BarajayCartas</RootNamespace>
-    <AssemblyName>BarajayCartas</AssemblyName>
+    <RootNamespace>HerenciaFormas</RootNamespace>
+    <AssemblyName>HerenciaFormas</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,20 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Baraja.cs" />
-    <Compile Include="Carta.cs" />
-    <Compile Include="Jugador.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Utilities\Utilities.csproj">
-      <Project>{5f72856b-5c53-4aba-951e-31e034b5a356}</Project>
-      <Name>Utilities</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
