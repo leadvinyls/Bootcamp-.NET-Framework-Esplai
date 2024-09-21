@@ -23,6 +23,16 @@ namespace ShapesInheritance
     public class Poligon : Shape 
     { 
         public int NumSides { get; set; }
+
+        public Poligon(int numSides)
+        {
+            this.NumSides = numSides;
+        }
+
+        public override string ToString()
+        {
+            return $"Sides: {NumSides},";
+        }
     }
 
     public class Ellipse : Shape
@@ -41,8 +51,21 @@ namespace ShapesInheritance
         }
         public Ellipse(double minorAxis, double majorAxis)
         {
-            this.MinorAxis = minorAxis;
-            this.MajorAxis = majorAxis;
+            if (minorAxis < majorAxis)
+            {
+                this.MinorAxis = minorAxis;
+                this.MajorAxis = majorAxis;
+            }
+            else
+            {
+                this.MinorAxis = majorAxis;
+                this.MajorAxis = minorAxis;
+            }
+        }
+
+        public override string ToString()
+        {
+            return $"Minor Axis: {MinorAxis}, Major Axis: {MajorAxis}, Area: {calcArea()}, Perimeter: {calcPerimeter()}";
         }
     }
 
@@ -51,7 +74,7 @@ namespace ShapesInheritance
         public double Length { get; set; }
         public double Height { get; set; }
 
-        public Rectangle(double length, double height)
+        public Rectangle(double length, double height) : base(4)
         {
             this.Length = length;
             this.Height = height;
@@ -70,7 +93,7 @@ namespace ShapesInheritance
 
         public override string ToString() 
         {
-            return $"Length: {Length}, Height: {Height}, Area: {calcArea()}";
+            return base.ToString() + $"Length: {Length}, Height: {Height}, Area: {calcArea()}";
         } 
     }
 
@@ -78,13 +101,15 @@ namespace ShapesInheritance
     {
         public double SideA { get; set; }
         public double SideB { get; set; }
+        public double SideC { get; set; }
         public double Angle { get; set; }
 
-        public Triangle(double sideA, double sideB, double angle) 
+        public Triangle(double sideA, double sideB, double angle) : base(3)
         {
             this.SideA = sideA;
             this.SideB = sideB;
             this.Angle = angle;
+            SideC = Math.Sqrt(Math.Pow(SideA, 2) + Math.Pow(SideB, 2) - (2 * SideA * SideB * Math.Cos((Angle  * Math.PI) / 180)));
         }
 
         public override double calcArea()
@@ -94,8 +119,12 @@ namespace ShapesInheritance
 
         public override double calcPerimeter()
         {
-            double sideC = Math.Sqrt(Math.Pow(SideA, 2) + Math.Pow(SideB, 2) - (2 * SideA * SideB * Math.Cos(Angle)));
-            return SideA + SideB + sideC;
+            return SideA + SideB + SideC;
+        }
+
+        public override string ToString()
+        {
+            return base.ToString() + $"SideA: {SideA}, SideB: {SideB}, SideC: {SideC}, Angle A&B: {Angle}, Area: {calcArea()}, Perimeter: {calcPerimeter()}";
         }
     }
 
@@ -105,12 +134,22 @@ namespace ShapesInheritance
         {
             
         }
+
+        public override string ToString()
+        {
+            return $"Sides: {NumSides}, SideLength: {Length}, Area: {calcArea()}, Perimeter: {calcPerimeter()}";
+        }
     }
 
     public class Circle : Ellipse
     {
         public Circle(double radius) : base(radius, radius)
         { 
+        }
+
+        public override string ToString()
+        {
+            return $"Radius: {MajorAxis}, Area: {calcArea()}, Perimeter: {calcPerimeter()}";
         }
     }
 }

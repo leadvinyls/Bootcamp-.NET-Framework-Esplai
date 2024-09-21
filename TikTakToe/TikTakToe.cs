@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Drawing;
 using Utilities;
 
-namespace ConsoleApp3
+namespace TikTakToe
 {
     internal class TikTakToe
     {
