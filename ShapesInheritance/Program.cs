@@ -10,6 +10,9 @@ namespace ShapesInheritance
     {
         static void Main(string[] args)
         {
+            Rectangle r = new Rectangle(2, 4);
+            Console.WriteLine($"Rectangulo creado:\n{r}");
+            Console.ReadKey();
         }
     }
 }
