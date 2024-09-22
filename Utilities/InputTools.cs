@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace Utilities
 {
@@ -19,6 +20,31 @@ namespace Utilities
 
                 Console.WriteLine("Error: El valor introducido no es un número");
             }
+        }
+
+        public static Point IntroKey()
+        {
+            Point nextPos = new Point(0,0);
+            ConsoleKey direction = Console.ReadKey(false).Key;
+            switch (direction) 
+            {
+                case ConsoleKey.RightArrow:
+                    nextPos.Y = 1;
+                    break;
+                case ConsoleKey.DownArrow:
+                    nextPos.X = 1;
+                    break;
+                case ConsoleKey.LeftArrow:
+                    nextPos.Y = -1;
+                    break;
+                case ConsoleKey.UpArrow:
+                    nextPos.X = -1;
+                    break;
+                default:
+                    break;
+            }
+
+            return nextPos;
         }
     }
 }

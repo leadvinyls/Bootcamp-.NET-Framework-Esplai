@@ -10,7 +10,7 @@ using Utilities;
 
 namespace TikTakToe
 {
-    internal class TikTakToe
+    internal class Program
     {
         enum GameMode
         {

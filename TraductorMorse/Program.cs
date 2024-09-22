@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace TraductorMorse
 {
-    internal class TraductorMorse
+    internal class Program
     {
         enum eWeek
         {

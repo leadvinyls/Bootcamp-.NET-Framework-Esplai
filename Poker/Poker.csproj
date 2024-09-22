@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0C3CF570-96CF-4B64-89C9-FB1A69B73417}</ProjectGuid>
+    <ProjectGuid>{8CEE7ABD-0E34-4CCE-A2E5-0D80A9DB1B46}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>TraductorMorse</RootNamespace>
-    <AssemblyName>TraductorMorse</AssemblyName>
+    <RootNamespace>Poker</RootNamespace>
+    <AssemblyName>Poker</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -50,6 +50,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DeckAndCards\DeckAndCards.csproj">
+      <Project>{ee2cfe3e-be51-4880-bf12-3130f817f31b}</Project>
+      <Name>DeckAndCards</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Utilities\Utilities.csproj">
       <Project>{5f72856b-5c53-4aba-951e-31e034b5a356}</Project>
       <Name>Utilities</Name>
