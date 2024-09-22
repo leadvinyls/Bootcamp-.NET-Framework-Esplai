@@ -16,6 +16,7 @@ namespace SnakeGame
         public static int mapSize = 15;
         public Snake Player { get; set; }
         bool?[,] map;
+        bool[,] cherryMap;
         //string[,] sMap;
         //public string[,] SMap { get { return sMap; } }
 
@@ -23,21 +24,26 @@ namespace SnakeGame
         {
             Player = new Snake();
             map = new bool?[mapSize, mapSize];
+            cherryMap = new bool[mapSize, mapSize];
 
             //sMap = new string[15, 15];
         }
 
         public void PlayGame() 
         {
-            UpdatePlayerPos();
+
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Black;
+            GenerateRandomCherry();
+            UpdateMap();
             int i = 1;
             while (true)
             {
                 OutputTools.Clear();
                 Console.WriteLine(this);
-                Point currentPos = Player.Head;
-                if (i % 2 == 0)
-                    Player.AddTail(currentPos);
+
+                if (i % 20 == 0)
+                    GenerateRandomCherry();
 
                 if (!MovePlayer())
                     break;
@@ -48,7 +54,7 @@ namespace SnakeGame
             for (int j = 0; j < snakeSize ; j++)
             {
                 Player.Body.RemoveLast();
-                UpdatePlayerPos();
+                UpdateMap();
                 Thread.Sleep(20);
                 OutputTools.Clear();
                 Console.WriteLine(this);
@@ -73,33 +79,47 @@ namespace SnakeGame
             else if (nextPos.Y < 0)
                 nextPos.Y = mapSize + nextPos.Y;
 
-            if (Player.Body.Find(nextPos) == null)
-                Player.Move(nextPos);
-            else
-                return false;
+            if (nextPos != Player.Neck)
+                if (Player.Body.Find(nextPos) == null)
+                    Player.Move(nextPos);
+                else
+                    return false;
 
-            UpdatePlayerPos();
+            if (map[Player.Head.X, Player.Head.Y] == false)
+            {
+                Player.AddTail();
+                DeleteCherry(Player.Head);
+            }
+
+            UpdateMap();
             return true;
         }
 
-        public void UpdatePlayerPos() 
+        public void UpdateMap() 
         {
             map = new bool?[mapSize, mapSize];
             foreach (var element in Player.Body)
             {
-                if (element == Player.Body.First())
+                if (element == Player.Head)
                     map[element.X, element.Y] = false;
                 else
                     map[element.X, element.Y] = true;
             }
+
+            for (int x = 0; x < mapSize; x++)
+                for (int y = 0; y < mapSize; y++)
+                    if (cherryMap[x, y] == true)
+                        map[x, y] = false;
+
         }
 
         public override string ToString()
         {
-            string sOut = "█──────────────────────────────█\n";
+            string sOut = "╔══════════════════════════════╗\n";
+
             for (int i = 0; i < mapSize; i++)
             {
-                sOut += "|";
+                sOut += "║";
                 for (int j = 0; j < mapSize; j++) 
                 {
                     bool? currentPos = map[i, j];
@@ -116,12 +136,25 @@ namespace SnakeGame
                             break;
                     }
                 }
-                sOut += "|\n";
+                sOut += "║\n";
             }
 
-            sOut += "█──────────────────────────────█\n";
+            sOut += "╚══════════════════════════════╝\n";
 
             return sOut;
+        }
+
+        public void GenerateRandomCherry()
+        {
+            Random rnd = new Random();
+            int x = rnd.Next(0, mapSize - 1);
+            int y = rnd.Next(0, mapSize - 1);
+            cherryMap[x, y] = true;
+        }
+
+        public void DeleteCherry(Point pos)
+        {
+            cherryMap[pos.X, pos.Y] = false;
         }
     }
 }

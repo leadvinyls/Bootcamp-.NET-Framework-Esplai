@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using System.Media;
 
 namespace SnakeGame
 {
@@ -13,6 +14,7 @@ namespace SnakeGame
 
         public LinkedList<Point> Body { get { return body; } }
         public Point Head { get { return body.First(); } }
+        public Point Neck { get { return body.ElementAtOrDefault(1);} }
         public Snake()
         {
             body = new LinkedList<Point>();
@@ -25,9 +27,9 @@ namespace SnakeGame
             body.AddFirst(nextPos);
         }
 
-        public void AddTail(Point lastPos) 
+        public void AddTail() 
         {
-            body.AddFirst(lastPos);
+            body.AddFirst(Head); ;
         }
     }
 }
