@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HerenciaFormas
+namespace ShapesInheritance
 {
     public class Ellipse : Shape
     {
