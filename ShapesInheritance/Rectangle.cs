@@ -32,5 +32,18 @@ namespace ShapesInheritance
         {
             return base.ToString() + $"Length: {Length}, Height: {Height}, Area: {CalcArea()}";
         }
+
+        public override string Draw()
+        {
+            return @"╔═════════╗
+║         ║
+║         ║
+║         ║
+║         ║
+║         ║
+║         ║
+║         ║
+╚═════════╝";
+        }
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ShapesInheritance
 {
-    public class Ellipse : Shape
+    public class Ellipse : FlatShape
     {
         public double MinorAxis { get; set; }
         public double MajorAxis { get; set; }
@@ -38,6 +38,16 @@ namespace ShapesInheritance
         public override string ToString()
         {
             return $"Minor Axis: {MinorAxis}, Major Axis: {MajorAxis}, Area: {CalcArea()}, Perimeter: {CalcPerimeter()}";
+        }
+
+        public override string Draw()
+        {
+            return @"    ***
+ *       *
+*         *
+*         *
+ *       *
+    ***";
         }
     }
 }

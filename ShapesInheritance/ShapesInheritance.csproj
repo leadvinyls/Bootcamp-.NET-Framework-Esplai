@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{7A7CED0B-C22B-46BC-9250-8396C2A7A748}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>HerenciaFormas</RootNamespace>
-    <AssemblyName>HerenciaFormas</AssemblyName>
+    <RootNamespace>ShapesInheritance</RootNamespace>
+    <AssemblyName>ShapesInheritance</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -45,11 +45,12 @@
   <ItemGroup>
     <Compile Include="Circle.cs" />
     <Compile Include="Ellipse.cs" />
+    <Compile Include="FluxDiagram.cs" />
     <Compile Include="Poligon.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rectangle.cs" />
-    <Compile Include="Shape.cs" />
+    <Compile Include="FlatShape.cs" />
     <Compile Include="Square.cs" />
     <Compile Include="Triangle.cs" />
   </ItemGroup>

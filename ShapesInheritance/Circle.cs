@@ -16,5 +16,16 @@ namespace ShapesInheritance
         {
             return $"Radius: {MajorAxis}, Area: {CalcArea()}, Perimeter: {CalcPerimeter()}";
         }
+
+        public override string Draw()
+        {
+            return @"    ***
+ *       *
+*         *
+*         *
+ *       *
+    ***";
+            
+        }
     }
 }

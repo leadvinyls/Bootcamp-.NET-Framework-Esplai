@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ShapesInheritance
 {
-    public class Poligon : Shape
+    public class Poligon : FlatShape
     {
         public int NumSides { get; set; }
 
@@ -19,6 +19,11 @@ namespace ShapesInheritance
         public override string ToString()
         {
             return $"Sides: {NumSides},";
+        }
+
+        public override string Draw()
+        {
+            return base.Draw();
         }
     }
 }

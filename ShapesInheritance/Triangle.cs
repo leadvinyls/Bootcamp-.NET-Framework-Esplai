@@ -35,6 +35,16 @@ namespace ShapesInheritance
         {
             return base.ToString() + $"SideA: {SideA}, SideB: {SideB}, SideC: {SideC}, Angle A&B: {Angle}, Area: {CalcArea()}, Perimeter: {CalcPerimeter()}";
         }
+
+        public override string Draw()
+        {
+            return @"     *         
+    / \        
+   /   \       
+  /     \      
+ /       \     
+*─────────*";
+        }
     }
 
 }

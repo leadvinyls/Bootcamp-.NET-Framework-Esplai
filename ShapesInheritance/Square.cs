@@ -17,5 +17,15 @@ namespace ShapesInheritance
         {
             return $"Sides: {NumSides}, SideLength: {Length}, Area: {CalcArea()}, Perimeter: {CalcPerimeter()}";
         }
+
+        public override string Draw()
+        {
+            return @"╔═════════╗
+║         ║
+║         ║
+║         ║
+║         ║
+╚═════════╝";
+        }
     }
 }
