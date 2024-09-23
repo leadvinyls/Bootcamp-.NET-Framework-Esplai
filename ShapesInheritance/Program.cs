@@ -15,6 +15,7 @@ namespace ShapesInheritance
             int nShapes = Menu();
             FluxDiagram fx = new FluxDiagram();
             fx.CreateFluxDiagram(nShapes);
+            Console.WriteLine(fx.Draw());
             Console.WriteLine(fx);
 
 

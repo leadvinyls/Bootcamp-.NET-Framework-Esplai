@@ -30,26 +30,28 @@ namespace ShapesInheritance
         }
         public FlatShape GenerateRandomShape()
         {
-            FlatShape shape = new FlatShape();
+            FlatShape shape;
+            double rndA = rnd.Next(1, 100), rndB = rnd.Next(1, 100), rndC = rnd.Next(1,179);
 
             switch (rnd.Next(0, 4))
             {
                 case 0:
-                    shape = new Rectangle(2, 4);
+                    shape = new Rectangle(rndA, rndB);
                     break;
                 case 1:
-                    shape = new Square(2);
+                    shape = new Square(rndA);
                     break;
                 case 2:
-                    shape = new Triangle(2, 4, 90);
+                    shape = new Triangle(rndA, rndB, rndC);
                     break;
                 case 3:
-                    shape = new Ellipse(2, 4);
+                    shape = new Ellipse(rndA, rndB);
                     break;
                 case 4:
-                    shape = new Circle(2);
+                    shape = new Circle(rndA);
                     break;
                 default:
+                    shape = new FlatShape();
                     break;
             }
 

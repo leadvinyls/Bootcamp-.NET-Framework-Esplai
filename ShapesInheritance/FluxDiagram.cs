@@ -26,6 +26,15 @@ namespace ShapesInheritance
         {
             string sOut = "";
             foreach (FlatShape shape in diagram)
+                sOut += $"{shape}\n";
+
+            return sOut;
+        }
+
+        public string Draw()
+        {
+            string sOut = "";
+            foreach (FlatShape shape in diagram)
             {
                 sOut += $"{shape.Draw()}\n";
                 if (shape != diagram.Last())

@@ -23,7 +23,7 @@ namespace ShapesInheritance
 
         public override double CalcArea()
         {
-            return (SideA * SideB * Math.Sin(Angle)) / 2;
+            return (SideA * SideB * Math.Abs(Math.Sin(Angle))) / 2;
         }
 
         public override double CalcPerimeter()
