@@ -37,7 +37,7 @@ namespace ShapesInheritance
 
         public override string ToString()
         {
-            return $"Minor Axis: {MinorAxis}, Major Axis: {MajorAxis}, Area: {CalcArea()}, Perimeter: {CalcPerimeter()}";
+            return $"Ellipse: Minor Axis: {MinorAxis}, Major Axis: {MajorAxis}, Area: {CalcArea()}, Perimeter: {CalcPerimeter()}";
         }
 
         public override string Draw()

@@ -14,7 +14,7 @@ namespace ShapesInheritance
 
         public override string ToString()
         {
-            return $"Radius: {MajorAxis}, Area: {CalcArea()}, Perimeter: {CalcPerimeter()}";
+            return $"Circle: Radius: {MajorAxis}, Area: {CalcArea()}, Perimeter: {CalcPerimeter()}";
         }
 
         public override string Draw()

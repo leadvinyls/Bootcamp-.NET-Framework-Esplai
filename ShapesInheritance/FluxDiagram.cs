@@ -25,6 +25,16 @@ namespace ShapesInheritance
 
             return totalArea;
         }
+        public double CalcTotalPerimeter()
+        {
+            double totalArea = 0;
+
+            foreach (FlatShape shape in diagram)
+                totalArea += shape.CalcPerimeter();
+
+            return totalArea;
+        }
+
         public void CreateFluxDiagram(int nShapes)
         {
             for (int i = 0; i < nShapes; i++)

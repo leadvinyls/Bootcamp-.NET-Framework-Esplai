@@ -30,7 +30,7 @@ namespace ShapesInheritance
 
         public override string ToString()
         {
-            return base.ToString() + $"Length: {Length}, Height: {Height}, Area: {CalcArea()}";
+            return base.ToString() + $"Length: {Length}, Height: {Height}, Area: {CalcArea()}, Perimeter. {CalcPerimeter()}";
         }
 
         public override string Draw()

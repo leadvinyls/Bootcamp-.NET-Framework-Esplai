@@ -15,7 +15,7 @@ namespace ShapesInheritance
 
         public override string ToString()
         {
-            return $"Sides: {NumSides}, SideLength: {Length}, Area: {CalcArea()}, Perimeter: {CalcPerimeter()}";
+            return $"Poligon: Sides: {NumSides}, SideLength: {Length}, Area: {CalcArea()}, Perimeter: {CalcPerimeter()}";
         }
 
         public override string Draw()

@@ -18,7 +18,7 @@ namespace ShapesInheritance
             Console.WriteLine(fx.Draw());
             Console.WriteLine(fx);
             Console.WriteLine($"Total area: {fx.CalcTotalArea()}");
-
+            Console.WriteLine($"Total perimeter: {fx.CalcTotalPerimeter()}");
 
             Console.ReadKey();
         }

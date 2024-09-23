@@ -18,7 +18,7 @@ namespace ShapesInheritance
 
         public override string ToString()
         {
-            return $"Sides: {NumSides},";
+            return $"Poligon: Sides: {NumSides}, ";
         }
 
         public override string Draw()
