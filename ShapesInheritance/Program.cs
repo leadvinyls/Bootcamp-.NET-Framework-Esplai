@@ -17,6 +17,7 @@ namespace ShapesInheritance
             fx.CreateFluxDiagram(nShapes);
             Console.WriteLine(fx.Draw());
             Console.WriteLine(fx);
+            Console.WriteLine($"Total area: {fx.CalcTotalArea()}");
 
 
             Console.ReadKey();

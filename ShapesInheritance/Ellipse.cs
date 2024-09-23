@@ -9,8 +9,8 @@ namespace ShapesInheritance
 {
     public class Ellipse : FlatShape
     {
-        public double MinorAxis { get; set; }
-        public double MajorAxis { get; set; }
+        protected double MinorAxis { get; set; }
+        protected double MajorAxis { get; set; }
 
         public override double CalcArea()
         {

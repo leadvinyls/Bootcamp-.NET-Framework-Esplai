@@ -8,7 +8,9 @@ namespace ShapesInheritance
 {
     public class Rhombus : Poligon
     {
-        public Rhombus() : base(4)
+        double MajorDiag { get; set; }
+        double MinorDiag { get; set; }
+        public Rhombus(double majorDiag, double minorDiag) : base(4)
         { 
 
         }

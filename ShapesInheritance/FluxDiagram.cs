@@ -16,6 +16,15 @@ namespace ShapesInheritance
             diagram = new LinkedList<FlatShape>();
         }
 
+        public double CalcTotalArea()
+        {
+            double totalArea = 0;
+
+            foreach (FlatShape shape in diagram)
+                totalArea += shape.CalcArea();
+
+            return totalArea;
+        }
         public void CreateFluxDiagram(int nShapes)
         {
             for (int i = 0; i < nShapes; i++)
