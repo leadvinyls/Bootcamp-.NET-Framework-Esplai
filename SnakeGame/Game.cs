@@ -32,8 +32,8 @@ namespace SnakeGame
         public void PlayGame() 
         {
 
-            Console.BackgroundColor = ConsoleColor.White;
-            Console.ForegroundColor = ConsoleColor.Black;
+            //Console.BackgroundColor = ConsoleColor.White;
+            //Console.ForegroundColor = ConsoleColor.Black;
             GenerateRandomCherry();
             UpdateMap();
             int i = 1;
