@@ -10,20 +10,24 @@ namespace HospitalManagement
     {
         public string Name { get; set; }
         public uint Age { get; set; }
-        public string ID { get; set; }
-
+        public ID PID { get; set; }
         public Person() 
         {
             Name = "";
             Age = 0;
-            ID = "00000000X";
+            PID = new ID();
         }
 
-        public Person(string name, uint age, string id)
+        public Person(string name, uint age)
         {
             this.Name = name;
             this.Age = age;
-            this.ID = id;
+        }
+
+        public virtual void Menu() { }
+        public virtual string ToFileString() 
+        {
+            return $"{Name}█{Age}█{PID.ToFileString()}";
         }
     }
 }

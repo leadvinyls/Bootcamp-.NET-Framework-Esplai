@@ -20,5 +20,14 @@ namespace Utilities
             Console.SetCursorPosition(0, 0);
             //Console.CursorVisible = true;
         }
+
+        public static string ToFileString(Object o) 
+        {
+            string sOut = "";
+            Type l = typeof(o);
+
+
+            return sOut;
+        }
     }
 }

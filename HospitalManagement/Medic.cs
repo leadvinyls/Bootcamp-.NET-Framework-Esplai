@@ -8,5 +8,11 @@ namespace HospitalManagement
 {
     public class Medic : Staff
     {
+        LinkedList<Patient> patients;
+        public Medic() : base()
+        {
+            HID.Type = ID.EType.Medic;
+            patients = new LinkedList<Patient>();
+        }
     }
 }
