@@ -9,15 +9,12 @@ namespace HospitalManagement
 {
     internal class Program
     {
-        static string appointmentsFile = @"C:\Bootcamp\appointments.txt";
-        static string administrativesFile = @"C:\Bootcamp\administratives.txt";
-        static string medicsFile = @"C:\Bootcamp\medics.txt";
-        static string patientsFile = @"C:\Bootcamp\patients.txt";
-        static string illnessesFile = @"C:\Bootcamp\illnesses.txt";
+
+        static List<ID> regIds = new List<ID>();
+        static string appointmentsFile = @"C:\Bootcamp\ids.txt";
         static void Main(string[] args)
         {
             Hospital h = new Hospital();
-            
             while (true)
             {
                 OutputTools.Clear();
@@ -25,6 +22,11 @@ namespace HospitalManagement
                     break;
                 Console.ReadKey();
             }
+            foreach (Person p in h.People)
+                p.Draw();
+
+                //Console.WriteLine(p);
+            Console.ReadKey();
         }
     }
 }

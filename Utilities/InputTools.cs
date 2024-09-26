@@ -50,31 +50,34 @@ namespace Utilities
             return nextPos;
         }
 
-        public static void AddObjectToFile(Object o, string filePath) 
+        public static void AddObjectToFile(Object obj, string filePath) 
         {
             try
             {
                 StreamWriter sw = new StreamWriter(filePath);
-
-                foreach (var equipo in equipos)
-                {
-                    sw.Write($"{equipo.Key}█{equipo.Value}");
-                    foreach (var jugador in jugadores)
-                    {
-                        string[] listJugadores = jugador.Value;
-                        for (int i = 0; i < listJugadores.Length; i++)
-                            sw.Write($"█{listJugadores[i]}");
-                    }
-                    sw.Write("\n");
-                }
-
+                sw.Write(OutputTools.ToFileString(obj));
                 sw.Close();
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
+                File.Open(filePath, FileMode.Create).Close();
             }
         }
+        /*public static Object FileToObject(string filePath)
+        {
+            try
+            {
+                StreamWriter sw = new StreamWriter(filePath);
+                sw.Write(OutputTools.ToFileString(obj));
+                sw.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                File.Open(filePath, FileMode.Create).Close();
+            }
+        }*/
 
     }
 }

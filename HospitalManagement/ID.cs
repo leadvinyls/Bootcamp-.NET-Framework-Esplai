@@ -10,8 +10,7 @@ namespace HospitalManagement
     public class ID
     {
         public enum EType
-        { 
-            Person = 'U',
+        {
             Patient = 'P',
             Administrative = 'A',
             Medic = 'M'
@@ -57,11 +56,6 @@ namespace HospitalManagement
         public override string ToString()
         {
            return $"{Num.ToString("D8")}{(char)Type}";
-        }
-
-        public string ToFileString()
-        { 
-            return
         }
     }
 }

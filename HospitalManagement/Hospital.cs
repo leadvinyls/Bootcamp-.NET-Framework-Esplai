@@ -10,15 +10,11 @@ namespace HospitalManagement
     public class Hospital
     {
         static Random rnd = new Random();
-        LinkedList<Person> patients;
-        LinkedList<Person> medics;
-        LinkedList<Person> administratives;
-
+        LinkedList<Person> people;
+        public LinkedList<Person> People { get { return people; } }
         public Hospital() 
         {
-            patients = new LinkedList<Person>();
-            medics = new LinkedList<Person>();
-            administratives = new LinkedList<Person>();
+            people = new LinkedList<Person>();
         }
 
         public bool Menu() 
@@ -29,22 +25,22 @@ namespace HospitalManagement
 3. Administrative
 0. Exit");
             int option = InputTools.IntroNum(3);
-            Person p;
+            Person p = new Person();
             switch (option) 
             {
                 case 1:
-                    SelectRandom(patients, out p);
                     break;
                 case 2:
-                    SelectRandom(medics, out p);
+                    p = new Medic();
                     break;
                 case 3:
-                    SelectRandom(administratives, out p);
+                    p = new Administrative();
                     break;
                 default:
                     p = null;
                     return false;
             }
+
             if (p != null)
                 p.Menu();
             return true;
@@ -54,11 +50,13 @@ namespace HospitalManagement
             
         }
 
-        public bool SelectRandom(LinkedList<Person> list, out Person p) 
+        public bool SelectPerson(Type t, out Person p) 
         {
+            var list = People.Where(o => o.GetType() == t );
+
             if (list.Count() > 0)
             {
-                int n = rnd.Next(0, list.Count() - 1);
+                int n = rnd.Next(0, People.Count() - 1);
                 p = list.ElementAt(n);
                 return true;
             }
